@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podmark | We Create Impact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            podDark: '#0E0516',
+            podPurple: '#8b5cf6',
+            podCyan: '#38BDF8',
+            podDeepPurple: '#1a103c',
+            podGold: '#BD9970',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          gridTemplateColumns: {
+            '20': 'repeat(20, minmax(0, 1fr))',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0E0516;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .impact-gradient {
+      background: linear-gradient(180deg, #38BDF8 0%, #1D4ED8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .purple-gradient {
+      background: linear-gradient(90deg, #8b5cf6 0%, #7C3AED 100%);
+    }
+
+    .gold-gradient {
+      background: linear-gradient(90deg, #BD9970 0%, #8E6F4B 100%);
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .film-strip {
+      background: repeating-linear-gradient(90deg,
+          rgba(139, 92, 246, 0.05),
+          rgba(139, 92, 246, 0.05) 40px,
+          transparent 40px,
+          transparent 80px);
+    }
+
+    /* Navigation Hover Effects */
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #8b5cf6;
+      transform: translateX(-101%);
+      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .nav-link:hover::after {
+      transform: translateX(0);
+    }
+
+    .glass-nav {
+      background: rgba(14, 5, 22, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .cta-glow:hover {
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: scroll 30s linear infinite;
+    }
+
+    .animate-marquee-reverse {
+      display: flex;
+      width: 200%;
+      animation: scroll 30s linear infinite reverse;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "animejs": "https://esm.sh/animejs@3.2.1",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "gsap/": "https://esm.sh/gsap@3.12.5/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="scroll-smooth">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
